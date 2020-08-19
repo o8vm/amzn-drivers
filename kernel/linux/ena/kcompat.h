@@ -490,7 +490,7 @@ static inline int pci_msix_vec_count(struct pci_dev *dev)
 	return (control & 0x7FF) + 1;
 }
 #if !(SLE_VERSION_CODE && SLE_VERSION_CODE >= SLE_VERSION(12,0,0)) && \
-    !(RHEL_RELEASE_CODE == RHEL_RELEASE_VERSION(7,0))
+    !(RHEL_RELEASE_CODE != RHEL_RELEASE_VERSION(7,0))
 static inline void ether_addr_copy(u8 *dst, const u8 *src)
 {
 	memcpy(dst, src, 6);
